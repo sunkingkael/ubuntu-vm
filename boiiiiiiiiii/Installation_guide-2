@@ -1,0 +1,46 @@
+Ngspice installation :-
+sudo apt-get install -y ngspice
+
+Default Apps needed to be installed:
+sudo apt install build-essential
+sudo apt-get build-dep gtkwave
+sudo apt-get install tk-dev
+sudo apt-get install tcl
+sudo apt install numactl
+sudo apt-get install libglu1-mesa-dev freeglut3-dev mesa-common-dev
+sudo apt-get install csh
+sudo apt-get install git
+sudo apt-get install m4 tcsh tcl-dev tk-dev
+sudo apt-get install python3
+sudo apt install python3-distutils
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt install python3.7-distutils
+
+Magic installation :-
+
+sudo wget "http://opencircuitdesign.com/magic/archive/magic-8.3.122.tgz"
+tar -xvzf magic-8.3.122.tgz
+cd magic-8.3.122
+sudo ./configure
+sudo make
+sudo make install
+
+
+PDK installation :-
+
+make a folder as pdks
+cd
+cd pdks
+git clone https://github.com/google/skywater-pdk
+cd skywater-pdk
+git submodule init libraries/sky130_fd_pr/latest
+git submodule update
+make timing 
+
+cd ../
+git clone git://opencircuitdesign.com/open_pdks
+cd open_pdks
+sudo ./configure --enable-sky130-pdk=/home/kris/pdks/skywater-pdk/libraries
+sudo make
+sudo make install
