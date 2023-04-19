@@ -2,6 +2,7 @@ Inverter Simulation
 
 * this file edited to remove everything not ion tt lib
 .lib "/home/sandman/pdks/open_pdks/sky130/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+*.lib "/mnt/wslg/distro/usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
 
 * instantiate inverter
 Xinv Y A VPWR VGND VPWR inverter
